@@ -1,0 +1,5 @@
+---
+// Reserved for a future, explicitly enabled advertising integration.
+const { enabled = false, label = 'Publicidad' } = Astro.props;
+---
+{enabled && <aside class="ad-slot" aria-label={label}><span>{label}</span><slot /></aside>}

@@ -1,0 +1,6 @@
+---
+import Base from '../../layouts/Base.astro'; import ToolCard from '../../components/ToolCard.astro'; import { categories, tools } from '../../data/tools';
+export function getStaticPaths(){return categories.map(category => ({params:{slug:category.slug},props:{category}}));}
+const { category } = Astro.props;
+---
+<Base title={`${category.name} | EuroMetric`} description={category.description} noindex><section class="page-section"><div class="container"><p class="breadcrumb"><a href="/">Inicio</a> / Categorías / {category.name}</p><div class="eyebrow">CATEGORÍAS</div><h1>{category.name}</h1><p class="page-lead">{category.description}</p><p class="notice">Consulta los supuestos y límites de cada cálculo.</p><div class="tool-grid">{tools.filter(t=>t.category===category.slug).map(tool=><ToolCard tool={tool}/>)}</div></div></section></Base>

@@ -1,0 +1,4 @@
+---
+import Base from '../../layouts/Base.astro'; import ToolCard from '../../components/ToolCard.astro'; import { tools } from '../../data/tools';
+---
+<Base title="Calculadoras financieras gratuitas | EuroMetric" description="Explora las 15 herramientas financieras de EuroMetric." noindex><section class="page-section"><div class="container"><p class="breadcrumb"><a href="/">Inicio</a> / Herramientas</p><div class="eyebrow">EUROMETRIC</div><h1>Todas las herramientas</h1><p class="page-lead">Encuentra la herramienta que necesitas para entender mejor tus finanzas.</p><p class="notice">Introduce tus datos y consulta los supuestos de cada cálculo.</p><div class="tool-grid">{tools.map(tool => <ToolCard tool={tool}/>)}</div></div></section></Base>

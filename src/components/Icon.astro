@@ -1,0 +1,6 @@
+---
+import * as icons from 'lucide-react';
+const { name, size = 22 } = Astro.props;
+const Icon = (icons as unknown as Record<string, any>)[name] || icons.Calculator;
+---
+<Icon size={size} strokeWidth={1.8} aria-hidden="true" />

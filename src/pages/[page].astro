@@ -1,0 +1,8 @@
+---
+import Base from '../layouts/Base.astro';
+export function getStaticPaths(){const pages = [
+ {slug:'sobre-nosotros',title:'Sobre EuroMetric',text:'EuroMetric es un proyecto de herramientas financieras gratuitas diseñado para ayudar a entender mejor las decisiones económicas cotidianas. Las calculadoras ofrecen resultados orientativos y explican sus supuestos y limitaciones.'}
+];
+return pages.map(page=>({params:{page:page.slug},props:{page}}));} const {page}=Astro.props;
+---
+<Base title={`${page.title} | EuroMetric`} description={page.text} noindex><section class="page-section"><div class="container prose"><p class="breadcrumb"><a href="/">Inicio</a> / {page.title}</p><h1>{page.title}</h1><p>{page.text}</p></div></section></Base>
