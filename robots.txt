@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://eurometricbuisness.github.io/sitemap.xml
