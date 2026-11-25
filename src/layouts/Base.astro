@@ -1,8 +1,9 @@
 ---
 import '../styles/global.css';
 import Icon from '../components/Icon.astro';
+import { primarySite } from '../data/seo';
 const { title = 'EuroMetric | Tu dinero. Tus decisiones.', description = 'Herramientas financieras gratuitas para entender y gestionar tu economía.', noindex = false } = Astro.props;
-const site = import.meta.env.PUBLIC_SITE_URL;
+const site = import.meta.env.PUBLIC_SITE_URL || primarySite;
 const canonical = site ? new URL(Astro.url.pathname, site).href : undefined;
 const structuredData = site ? JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebSite', name: 'EuroMetric', url: new URL('/', site).href, inLanguage: 'es-ES' }).replace(/</g, '\\u003c') : undefined;
 ---
